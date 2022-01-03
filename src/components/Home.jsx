@@ -2,17 +2,16 @@ import React from "react";
 
 const Home = () => (
 	<div className="row">
-		<div className="col-md-4 col-xs-12"></div>
-		<div className="col-md-4 col-xs-12 text-center">
+		<div className="col-md-3 col-xs-12"></div>
+		<div className="col-md-6 col-xs-12 ">
+			<p>Browse films and TV shows and add them to your watchlist</p>
 			<img
 				src="/images/movie-icon.jpg"
 				alt="movie icon"
 				className="img img-thumbnail"
 			/>
-			<h3>Movie Browser</h3>
-			<p>Built with ReactJS</p>
 		</div>
-		<div className="col-md-4 col-xs-12"></div>
+		<div className="col-md-3 col-xs-12"></div>
 	</div>
 );
 

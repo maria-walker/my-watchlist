@@ -12,7 +12,7 @@ const MyWatchlist = ({ watchlist }) => {
 					style={{
 						backgroundColor: "teal",
 						borderRadius: 3,
-						height: 150,
+						height: 160,
 						width: "85%",
 						margin: "10px auto",
 						display: "flex",
@@ -21,16 +21,16 @@ const MyWatchlist = ({ watchlist }) => {
 				>
 					<div>
 						<img
+							className="details-poster"
 							src={myMovie.movie.Poster}
 							alt="poster"
-							style={{ objectFit: "contain", height: 150 }}
 						/>
 					</div>
 					<div style={{ textAlign: "left" }}>
 						<div style={{ margin: "10px 10px" }}>
-							<h5>{myMovie.movie.Title}</h5>
-							<p> {myMovie.movie.Year}</p>
-							<p> {myMovie.movie.Plot}</p>
+							<h5 className="details-title">{myMovie.movie.Title}</h5>
+							<p className="details-year"> {myMovie.movie.Year}</p>
+							<p className="details-plot"> {myMovie.movie.Plot}</p>
 						</div>
 					</div>
 				</div>
