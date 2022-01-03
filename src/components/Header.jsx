@@ -19,7 +19,7 @@ const Header = ({ searchText, setSearchText }) => {
 							style={{ textDecoration: "none" }}
 							onClick={() => setSearchText("")}
 						>
-							<h3>Movies & TV Shows</h3>
+							<h3>Films & TV Shows</h3>
 						</Link>
 					</div>
 					<div className="col-md-6">
