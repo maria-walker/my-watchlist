@@ -49,7 +49,13 @@ function App() {
 						/>
 						<Route
 							path="/watchlist"
-							element={<MyWatchlist watchlist={watchlist} />}
+							element={
+								<MyWatchlist
+									watchlist={watchlist}
+									setWatchlist={setWatchlist}
+									saveToLS={saveToLS}
+								/>
+							}
 						/>
 					</Routes>
 				</div>
@@ -68,4 +74,15 @@ function getFromLS(key) {
 		} catch (e) {}
 	}
 	return ls[key];
+}
+
+function saveToLS(key, value) {
+	if (global.localStorage) {
+		global.localStorage.setItem(
+			"rgl-8",
+			JSON.stringify({
+				[key]: value,
+			})
+		);
+	}
 }

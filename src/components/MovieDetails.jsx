@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
+	const [added, setAdded] = useState(false);
 	const omdbApi = axios.create({
 		baseURL: "https://www.omdbapi.com/",
 	});
@@ -52,14 +53,26 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 					type="button"
 					className="btn btn-info"
 					onClick={() => {
-						const newList = watchlist;
-						newList.push({ movie });
+						let newList;
+						if (!added) {
+							newList = watchlist;
 
-						saveToLS("watchlist", newList);
-						setWatchlist(newList);
+							newList.push({ movie });
+							saveToLS("watchlist", newList);
+							setWatchlist(newList);
+							setAdded(!added);
+						} else {
+							newList = watchlist.filter(
+								(film) => film.movie.imdbID !== movie.imdbID
+							);
+							console.log(newList, "filtered in Movie Details");
+							saveToLS("watchlist", newList);
+							setWatchlist(newList);
+							setAdded(!added);
+						}
 					}}
 				>
-					+ Add to my watchlist
+					{!added ? "+ Add to my watchlist" : "Remove from watchlist"}
 				</button>
 				<br />
 				<br />
