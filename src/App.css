@@ -1,5 +1,6 @@
 .App {
 	text-align: center;
+	font-family: Poppins;
 }
 
 .App-logo {
@@ -28,19 +29,49 @@
 	color: #61dafb;
 }
 
+.details-card {
+	border-top: solid 2px red;
+	background-color: teal;
+	border-radius: 3;
+	height: 180px;
+	width: 85%;
+	margin: 10px auto;
+	display: flex;
+}
+
+.details-title {
+	margin: 0 0 5px;
+}
+
 .details-poster {
 	object-fit: contain;
-	height: 150px;
+	height: 178px;
+}
+
+.btn.btn-secondary {
+	padding: 2px 7px;
+	border-radius: 12px;
+	font-size: 14px;
+	height: 2em;
+}
+
+.btn.btn-success {
+	margin: 5px 5px 0;
 }
 
 @media screen and (max-width: 800px) {
+	.details-card {
+		height: 200px;
+		width: 96%;
+		margin: 10px auto;
+		display: flex;
+	}
 	.details-poster {
 		object-fit: contain;
-		height: 160px;
+		height: 198px;
 	}
 	.details-title {
-		font-size: 16px;
-		margin: 0;
+		font-size: 14px;
 	}
 	.details-year {
 		font-size: 12px;
@@ -48,5 +79,9 @@
 	}
 	.details-plot {
 		font-size: 10px;
+	}
+
+	.btn.btn-success {
+		margin: 5px 5px 0;
 	}
 }

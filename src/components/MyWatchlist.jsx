@@ -7,28 +7,23 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 	return watchlist[0] ? (
 		watchlist.map((myMovie, index) => {
 			return (
-				<div
-					key={index}
-					style={{
-						backgroundColor: "teal",
-						borderRadius: 3,
-						height: 160,
-						width: "85%",
-						margin: "10px auto",
-						display: "flex",
-						//justifyContent: "space-between",
-					}}
-				>
-					<div>
+				<div key={index} className="details-card">
+					<div style={{ minWidth: "160px", display: "flex" }}>
 						<img
 							className="details-poster"
 							src={myMovie.movie.Poster}
 							alt="poster"
 						/>
 					</div>
-					<div style={{ textAlign: "left" }}>
+					<div style={{ textAlign: "left", width: "100%" }}>
 						<div style={{ margin: "10px 10px" }}>
-							<div style={{ display: "flex", justifyContent: "space-between" }}>
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "space-between",
+									width: "100%",
+								}}
+							>
 								<h5 className="details-title">{myMovie.movie.Title}</h5>
 								<button
 									type="button"
@@ -42,11 +37,15 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 										setWatchlist(newList);
 									}}
 								>
-									Remove from watchlist
+									Unsave
 								</button>
 							</div>
 
-							<p className="details-year"> {myMovie.movie.Year}</p>
+							<p style={{ marginBottom: "5px" }} className="details-year">
+								{" "}
+								{myMovie.movie.Year}
+							</p>
+
 							<p className="details-plot"> {myMovie.movie.Plot}</p>
 						</div>
 					</div>
