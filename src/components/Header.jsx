@@ -10,16 +10,19 @@ const Header = ({ searchText, setSearchText }) => {
 	};
 
 	return (
-		<div className="alert alert-primary">
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-primary"
+			style={{ color: "#fff" }}
+		>
 			<div className="container">
-				<div className="row">
+				<div className="row" style={{ width: "100%" }}>
 					<div className="col-md-4">
 						<Link
 							to="/"
 							style={{ textDecoration: "none" }}
 							onClick={() => setSearchText("")}
 						>
-							<h3>Films & TV Shows</h3>
+							<h3 style={{ color: "#fff" }}>Films & TV Shows</h3>
 						</Link>
 					</div>
 					<div className="col-md-6">
@@ -49,7 +52,7 @@ const Header = ({ searchText, setSearchText }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

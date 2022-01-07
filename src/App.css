@@ -55,10 +55,6 @@
 	height: 2em;
 }
 
-.btn.btn-success {
-	margin: 5px 5px 0;
-}
-
 @media screen and (max-width: 800px) {
 	.details-card {
 		height: 200px;
