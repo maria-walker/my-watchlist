@@ -29,6 +29,7 @@ function App() {
 							path="/movies"
 							element={
 								<MovieList
+									setSearchText={setSearchText}
 									searchText={searchText}
 									movies={movies}
 									setMovies={setMovies}

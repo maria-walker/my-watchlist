@@ -29,32 +29,48 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 			});
 	}, [sText]);
 
+	console.log(watchlist);
+	console.log(movie.imdbID);
+	console.log(
+		watchlist.filter((myMovie) => myMovie.movie.imdbID === movie.imdbID).length
+	);
+
 	return (
-		<div className="row" style={{ textAlign: "left" }}>
+		<div
+			className="row"
+			style={{
+				textAlign: "left",
+				height: "100%",
+				width: "100%",
+				backgroundColor: "#000",
+			}}
+		>
 			{" "}
-			<div className="col-md-4">
+			<div className="col-md-4 col-sm-12 col-12">
 				<img
+					id="details-poster"
 					src={movie.Poster}
 					alt={movie.Title}
 					className="img img-thumbnail"
 				/>
 			</div>
-			<div className="col-md-8">
-				<h2>{movie.Title}</h2>
+			<div id="movie-details" className="col-md-8 col-sm-12 col-12">
+				<h2 id="details-title">{movie.Title}</h2>
 				<p>
 					{movie.Year} | {movie.Rated} | {movie.Runtime} | {movie.Country}
 				</p>
 				<p>{movie.Genre} </p>
-				{/* <button type="button" class="btn btn-primary">
-					Primary
-				</button> */}
 
 				<button
 					type="button"
 					className="btn btn-info"
 					onClick={() => {
 						let newList;
-						if (!added) {
+						if (
+							!watchlist.filter(
+								(myMovie) => myMovie.movie.imdbID === movie.imdbID
+							).length
+						) {
 							newList = watchlist;
 
 							newList.push({ movie });
@@ -72,12 +88,15 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 						}
 					}}
 				>
-					{!added ? "+ Add to my watchlist" : "Remove from watchlist"}
+					{!watchlist.filter((myMovie) => myMovie.movie.imdbID === movie.imdbID)
+						.length
+						? "+ Add to my watchlist"
+						: "Remove from watchlist"}
 				</button>
 				<br />
 				<br />
 				<p>{movie.Plot} </p>
-				<table className="table">
+				<table className="table" style={{ color: "#fafafa" }}>
 					<tbody>
 						<tr>
 							<td>Director</td>

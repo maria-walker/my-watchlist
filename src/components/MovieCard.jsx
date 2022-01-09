@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, setSearchText }) => {
 	const navigate = useNavigate();
 
 	const getMovieDetails = (imdbID) => {
@@ -9,8 +9,15 @@ const MovieCard = ({ movie }) => {
 	};
 
 	return (
-		<div className="col-md-3">
-			<div className="card" onClick={() => getMovieDetails(movie.imdbID)}>
+		<div className="col-md-3 col-sm-6 col-6">
+			<div
+				className="card"
+				onClick={() => {
+					getMovieDetails(movie.imdbID);
+					setSearchText("");
+				}}
+				style={{ marginBottom: 10 }}
+			>
 				<img
 					src={movie.Poster}
 					className="card-img-top"

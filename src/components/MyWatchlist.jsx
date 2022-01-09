@@ -1,18 +1,30 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 	console.log(watchlist, "watchlist in watchlist");
 	console.log(watchlist[0], "watchlist in watchlist");
 
+	const navigate = useNavigate();
+
+	const getMovieDetails = (imdbID) => {
+		navigate("/details?imdbID=" + imdbID);
+	};
+
 	return watchlist[0] ? (
 		watchlist.map((myMovie, index) => {
 			return (
-				<div key={index} className="details-card">
-					<div style={{ minWidth: "160px", display: "flex" }}>
+				<div key={index} className="watchlist-card">
+					<div
+						onClick={() => {
+							getMovieDetails(myMovie.movie.imdbID);
+						}}
+						style={{ minWidth: "160px", display: "flex" }}
+					>
 						<img
-							className="details-poster"
+							className="watchlist-poster"
 							src={myMovie.movie.Poster}
-							alt="poster"
+							alt={myMovie.movie.Title + " poster"}
 						/>
 					</div>
 					<div style={{ textAlign: "left", width: "100%" }}>
@@ -24,7 +36,14 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 									width: "100%",
 								}}
 							>
-								<h5 className="details-title">{myMovie.movie.Title}</h5>
+								<h5
+									className="watchlist-title"
+									onClick={() => {
+										getMovieDetails(myMovie.movie.imdbID);
+									}}
+								>
+									{myMovie.movie.Title}
+								</h5>
 								<button
 									type="button"
 									className="btn btn-secondary"
@@ -41,12 +60,26 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 								</button>
 							</div>
 
-							<p style={{ marginBottom: "5px" }} className="details-year">
+							<p
+								style={{ marginBottom: "5px" }}
+								className="watchlist-year"
+								onClick={() => {
+									getMovieDetails(myMovie.movie.imdbID);
+								}}
+							>
 								{" "}
 								{myMovie.movie.Year}
 							</p>
 
-							<p className="details-plot"> {myMovie.movie.Plot}</p>
+							<p
+								className="watchlist-plot"
+								onClick={() => {
+									getMovieDetails(myMovie.movie.imdbID);
+								}}
+							>
+								{" "}
+								{myMovie.movie.Plot}
+							</p>
 						</div>
 					</div>
 				</div>

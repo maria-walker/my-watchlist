@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import axios from "axios";
 
-const MovieList = ({ searchText, movies, setMovies }) => {
+const MovieList = ({ searchText, setSearchText, movies, setMovies }) => {
 	const omdbApi = axios.create({
 		baseURL: "https://www.omdbapi.com/",
 	});
@@ -30,9 +30,11 @@ const MovieList = ({ searchText, movies, setMovies }) => {
 	}, [searchText]);
 
 	return (
-		<div className="row">
+		<div className="row" style={{ height: "100%", backgroundColor: "#000" }}>
 			{movies &&
-				movies.map((movie, index) => <MovieCard movie={movie} key={index} />)}
+				movies.map((movie, index) => (
+					<MovieCard movie={movie} key={index} setSearchText={setSearchText} />
+				))}
 		</div>
 	);
 };
