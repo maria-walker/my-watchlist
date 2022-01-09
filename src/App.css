@@ -73,7 +73,7 @@
 	}
 
 	.watchlist-card {
-		height: 200px;
+		height: 215px;
 		width: 96%;
 		display: flex;
 	}
@@ -94,7 +94,9 @@
 	}
 	.watchlist-poster {
 		object-fit: contain;
-		height: 197px;
+		width: 140px;
+		height: fit-content;
+		margin: 0;
 	}
 
 	#details-poster {
