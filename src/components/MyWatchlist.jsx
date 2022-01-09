@@ -19,7 +19,7 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 						onClick={() => {
 							getMovieDetails(myMovie.movie.imdbID);
 						}}
-						style={{ minWidth: "160px", display: "flex" }}
+						style={{ minWidth: "135px", display: "flex" }}
 					>
 						<img
 							className="watchlist-poster"
