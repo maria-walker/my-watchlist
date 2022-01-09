@@ -22,7 +22,7 @@ const Header = ({ searchText, setSearchText }) => {
 			<div className="container">
 				<div className="row" style={{ width: "100%", display: "flex" }}>
 					<div className="col-md-1 d-none d-md-block"></div>
-					<div className="col-md-2 col-sm-2 col-2">
+					<div className="col-md-2 col-sm-2 col-2" id="header-logo">
 						<Link
 							to="/"
 							style={{ textDecoration: "none" }}
@@ -81,6 +81,7 @@ const Header = ({ searchText, setSearchText }) => {
 					<div
 						className="col-md-2 col-sm-3 col-3"
 						style={!inWatchlist ? { display: "block" } : { display: "none" }}
+						id="my-list-btn-container"
 					>
 						<Link to="watchlist" onClick={() => setSearchText("")}>
 							<button type="button" className="btn btn-success">
