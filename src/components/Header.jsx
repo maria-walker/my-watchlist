@@ -29,7 +29,7 @@ const Header = ({ searchText, setSearchText }) => {
 							onClick={() => setSearchText("")}
 						>
 							<img
-								src="../../favicon.ico"
+								src="/images/app-icon.png"
 								alt="app logo"
 								height="60"
 								style={{ marginTop: "-3px", marginLeft: "30%" }}
