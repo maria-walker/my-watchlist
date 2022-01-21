@@ -5,6 +5,7 @@ import axios from "axios";
 
 const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 	const [added, setAdded] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const omdbApi = axios.create({
 		baseURL: "https://www.omdbapi.com/",
 	});
@@ -26,6 +27,7 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 			.then((movieDetails) => {
 				console.log(movieDetails);
 				setMovie(movieDetails.data);
+				setLoading(false);
 			});
 	}, [sText]);
 
@@ -35,7 +37,12 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 		watchlist.filter((myMovie) => myMovie.movie.imdbID === movie.imdbID).length
 	);
 
-	return (
+	return loading ? (
+		<div>
+			<div class="spinner-border text-success" role="status"></div>
+			<p class="text-success">Loading...</p>
+		</div>
+	) : (
 		<div
 			className="row"
 			style={{
