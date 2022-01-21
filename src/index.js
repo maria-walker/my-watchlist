@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css?22012022";
+import "./index.css?21012022";
 import App from "./components/App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
