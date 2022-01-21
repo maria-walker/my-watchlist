@@ -16,7 +16,7 @@ const Home = () => (
 				src="/images/movie-icon.png"
 				alt="The watchlist app. Browse films and TV shows and add them to your watchlist"
 				className="img img-thumbnail"
-				style={{ border: "none" }}
+				style={{ border: "none", width: "90wv", margin: "5px auto" }}
 			/>
 		</div>
 		<div className="col-md-3 col-xs-12"></div>
