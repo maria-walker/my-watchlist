@@ -73,7 +73,7 @@ const MovieDetails = ({ movie, setMovie, watchlist, setWatchlist }) => {
 						) {
 							newList = watchlist;
 
-							newList.push({ movie });
+							newList.unshift({ movie });
 							saveToLS("watchlist", newList);
 							setWatchlist(newList);
 							setAdded(!added);

@@ -37,8 +37,9 @@
 }
 
 .watchlist-poster {
-	object-fit: contain;
 	height: 178px;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 .btn.btn-secondary {
@@ -93,10 +94,11 @@
 		font-size: 10px;
 	}
 	.watchlist-poster {
-		object-fit: contain;
 		width: 140px;
 		height: fit-content;
-		margin: 0;
+		max-height: 215px;
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 
 	#details-poster {
@@ -133,6 +135,5 @@
 		line-height: 9px;
 		height: 2em;
 		margin: 2px;
-		/* border: red 2px solid; */
 	}
 }

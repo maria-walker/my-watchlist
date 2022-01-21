@@ -61,7 +61,7 @@ const MyWatchlist = ({ watchlist, setWatchlist, saveToLS }) => {
 										setWatchlist(newList);
 									}}
 								>
-									Unsave
+									Remove
 								</button>
 							</div>
 
