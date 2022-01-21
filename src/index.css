@@ -1,13 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: "Poppins", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+.App {
+	text-align: center;
+	font-family: Poppins;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100%;
+	min-height: 100vh;
+	background-color: #000;
+}
+
+.watchlist-card {
+	border-top: solid 2px white;
+	background-color: #777b7e;
+	border-radius: 3;
+	height: 180px;
+	width: 85%;
+	margin: 0px auto 10px;
+	display: flex;
+	color: #000;
+}
+
+.watchlist-title {
+	margin: 0 0 5px;
+	color: #000;
+	max-width: 75%;
+}
+
+.watchlist-plot {
+	font-size: 14px;
+	z-index: -5;
+}
+
+#details-title {
+	margin: 15px 0 5px;
+	color: #fafafa;
+}
+
+.watchlist-poster {
+	height: 178px;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.btn.btn-secondary {
+	padding: 2px 7px;
+	border-radius: 1em;
+	font-size: 14px;
+	height: 2em;
+	/* border: red 2px solid; */
+}
+
+.btn.btn-success {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#movie-details {
+	color: #fafafa !important;
+}
+
+@media screen and (max-width: 767px) {
+	input.form-control {
+		padding: 8px 0 8px 8px;
+		margin: 4px 10px 0;
+	}
+	input::placeholder {
+		font-size: 12px;
+		color: #090909 !important;
+	}
+
+	.app-logo {
+		display: none;
+	}
+
+	.watchlist-card {
+		height: 215px;
+		width: 96%;
+		display: flex;
+	}
+	.details-watchlist {
+		object-fit: contain;
+		height: 198px;
+	}
+	.watchlist-title {
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+	.watchlist-year {
+		font-size: 12px;
+		margin: 0;
+	}
+	.watchlist-plot {
+		font-size: 10px;
+	}
+	.watchlist-poster {
+		width: 140px;
+		height: fit-content;
+		max-height: 215px;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	#details-poster {
+		width: 70%;
+		margin-left: 15%;
+	}
+
+	#movie-details {
+		margin-left: 3%;
+	}
+
+	.btn.btn-success {
+		padding: 9px 4px 7px;
+		width: 115%;
+		margin-top: 4px;
+		font-size: 13px;
+
+		/* margin-left: 5px; */
+	}
+
+	#my-list-btn-container {
+		margin-left: -3px;
+	}
+	#header-logo {
+		margin-right: 7px;
+
+		margin-left: -7px;
+	}
+
+	.btn.btn-secondary {
+		padding: 0 5px;
+		border-radius: 1em;
+		font-size: 9px;
+		line-height: 9px;
+		height: 2em;
+		margin: 2px;
+	}
 }
