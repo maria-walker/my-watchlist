@@ -72,6 +72,7 @@ const Header = ({ searchText, setSearchText }) => {
 								type="search"
 								placeholder="Start typing to search..."
 								className="form-control"
+								autoFocus
 								value={searchText}
 								onChange={searchHandler}
 								style={{ marginLeft: 13 }}
